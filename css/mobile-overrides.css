@@ -1,0 +1,247 @@
+/* ================================================
+   MOBILE OVERRIDES — loaded AFTER page-level <style>
+   Higher cascade position beats page-specific styles
+   ================================================ */
+
+@media (max-width: 720px) {
+    /* Kotogoto — Q&A */
+    .category-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 12px !important;
+    }
+    .category-card { padding: 22px 12px !important; border-radius: 18px !important; border-width: 2px !important; }
+    .category-emoji { font-size: 2.4rem !important; margin-bottom: 10px !important; }
+    .category-name { font-size: 0.88rem !important; margin-bottom: 4px !important; }
+    .category-count { font-size: 0.65rem !important; }
+
+    .qa-featured { padding: 28px 22px !important; border-radius: 22px !important; margin-top: 36px !important; }
+    .qa-featured::before { font-size: 4rem !important; top: -10px !important; right: 14px !important; }
+    .qa-featured h3 { font-size: 1.2rem !important; line-height: 1.55 !important; }
+    .qa-featured h3 br { display: none !important; }
+
+    .qa-list { margin-top: 40px !important; gap: 14px !important; }
+    .qa-card {
+        grid-template-columns: 1fr !important;
+        gap: 14px !important;
+        padding: 22px 20px !important;
+        border-radius: 18px !important;
+    }
+    .qa-icon {
+        width: 48px !important;
+        height: 48px !important;
+        font-size: 1.4rem !important;
+        border-radius: 14px !important;
+    }
+    .qa-label { font-size: 0.62rem !important; padding: 3px 10px !important; margin-bottom: 8px !important; }
+    .qa-question { font-size: 0.98rem !important; line-height: 1.6 !important; margin-bottom: 10px !important; }
+    .qa-answer { font-size: 0.84rem !important; line-height: 1.9 !important; margin-bottom: 12px !important; }
+    .qa-expert { font-size: 0.74rem !important; gap: 8px !important; }
+    .qa-expert-avatar { width: 28px !important; height: 28px !important; }
+    .qa-arrow { display: none !important; }
+
+    .ask-box { padding: 36px 24px !important; border-radius: 22px !important; margin-top: 48px !important; }
+    .ask-box h3 { font-size: 1.25rem !important; margin-bottom: 14px !important; line-height: 1.55 !important; }
+    .ask-box h3 br { display: none !important; }
+    .ask-box p { font-size: 0.86rem !important; line-height: 1.9 !important; margin-bottom: 24px !important; }
+    .ask-box p br { display: none !important; }
+    .ask-box::before { font-size: 6rem !important; top: -20px !important; left: -20px !important; }
+    .ask-box::after { font-size: 7rem !important; bottom: -30px !important; right: -20px !important; }
+
+    .search-qa { margin-top: 32px !important; }
+    .search-qa input {
+        padding: 14px 20px 14px 48px !important;
+        font-size: 0.92rem !important;
+        border-width: 2px !important;
+    }
+    .search-qa::before { font-size: 1.1rem !important; left: 18px !important; }
+
+    /* Shop Register */
+    .free-hero { padding: 32px 24px !important; border-radius: 24px !important; margin-top: 36px !important; }
+    .free-hero::before { font-size: 5rem !important; top: -10px !important; right: 20px !important; }
+    .free-hero-content { max-width: 100% !important; }
+    .free-title { font-size: 1.4rem !important; line-height: 1.55 !important; margin-bottom: 18px !important; }
+    .free-title br { display: none !important; }
+    .free-lead { font-size: 0.88rem !important; line-height: 1.95 !important; margin-bottom: 24px !important; }
+    .free-lead br { display: none !important; }
+    .free-badge { padding: 6px 14px !important; font-size: 0.72rem !important; margin-bottom: 14px !important; }
+
+    .steps-grid {
+        grid-template-columns: 1fr !important;
+        gap: 14px !important;
+        margin-top: 36px !important;
+    }
+    .step-card { padding: 30px 24px !important; border-radius: 22px !important; border-width: 2px !important; }
+    .step-number { width: 52px !important; height: 52px !important; line-height: 52px !important; font-size: 1.3rem !important; margin-bottom: 16px !important; }
+    .step-emoji { font-size: 2.4rem !important; margin-bottom: 12px !important; }
+    .step-title { font-size: 1.02rem !important; margin-bottom: 10px !important; }
+    .step-text { font-size: 0.84rem !important; line-height: 1.9 !important; }
+    .step-text br { display: none !important; }
+
+    .plan-compare {
+        grid-template-columns: 1fr !important;
+        gap: 14px !important;
+        margin-top: 36px !important;
+    }
+    .plan-col { padding: 28px 22px !important; border-radius: 22px !important; border-width: 2px !important; transform: none !important; }
+    .plan-col.featured { transform: none !important; }
+    .plan-title { font-size: 1.05rem !important; margin-bottom: 10px !important; }
+    .plan-price { font-size: 1.9rem !important; }
+    .plan-price .plan-unit { font-size: 0.8rem !important; }
+    .plan-badge { font-size: 0.66rem !important; padding: 5px 12px !important; top: -12px !important; }
+    .plan-features { margin-top: 20px !important; padding-top: 20px !important; }
+    .plan-features li { font-size: 0.82rem !important; padding: 7px 0 7px 24px !important; }
+
+    .register-form { padding: 28px 22px !important; border-radius: 22px !important; border-width: 2px !important; margin-top: 32px !important; }
+    .form-row-2 { grid-template-columns: 1fr !important; gap: 16px !important; }
+    .radio-row { grid-template-columns: repeat(2, 1fr) !important; gap: 8px !important; }
+    .radio-pill { padding: 10px 12px !important; font-size: 0.74rem !important; }
+
+    .faq-list { margin-top: 32px !important; }
+    .faq-item { padding: 18px 20px !important; border-radius: 16px !important; margin-bottom: 10px !important; }
+    .faq-q { font-size: 0.92rem !important; padding-left: 32px !important; margin-bottom: 8px !important; }
+    .faq-q::before { width: 24px !important; height: 24px !important; line-height: 24px !important; font-size: 0.76rem !important; }
+    .faq-a { font-size: 0.82rem !important; padding-left: 32px !important; line-height: 1.88 !important; }
+    .faq-a::before { width: 24px !important; height: 24px !important; line-height: 24px !important; font-size: 0.76rem !important; }
+
+    /* Community */
+    .gallery-filter { gap: 8px !important; margin-top: 32px !important; flex-wrap: wrap; }
+    .filter-btn { padding: 7px 16px !important; font-size: 0.76rem !important; }
+    .mega-gallery { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; margin-top: 32px !important; }
+    .story-feature {
+        grid-template-columns: 1fr !important;
+        padding: 28px 22px !important;
+        border-radius: 22px !important;
+        gap: 24px !important;
+        margin-top: 40px !important;
+    }
+    .story-feature h3 { font-size: 1.2rem !important; margin-bottom: 14px !important; line-height: 1.6 !important; }
+    .story-feature h3 br { display: none !important; }
+    .story-quote { font-size: 0.92rem !important; padding-left: 14px !important; margin: 16px 0 !important; }
+    .submit-form { padding: 28px 22px !important; border-radius: 22px !important; margin-top: 32px !important; }
+
+    /* Shops */
+    .search-box { padding: 24px 20px !important; border-radius: 22px !important; margin-top: 32px !important; }
+    .search-row { grid-template-columns: 1fr !important; gap: 12px !important; }
+    .line-filter { gap: 8px !important; margin-top: 18px !important; padding-top: 18px !important; }
+    .line-tag { font-size: 0.74rem !important; padding: 6px 14px !important; }
+    .shop-list { grid-template-columns: 1fr !important; gap: 12px !important; margin-top: 32px !important; }
+    .shop-card {
+        grid-template-columns: 56px 1fr !important;
+        gap: 14px !important;
+        padding: 16px !important;
+        border-radius: 16px !important;
+    }
+    .shop-type-icon { width: 56px !important; height: 56px !important; border-radius: 12px !important; }
+    .shop-type-emoji { font-size: 1.35rem !important; }
+    .shop-type-label { font-size: 0.52rem !important; margin-top: 2px !important; }
+    .shop-name { font-size: 0.92rem !important; margin-bottom: 4px !important; }
+    .shop-address, .shop-access { font-size: 0.76rem !important; line-height: 1.6 !important; }
+    .apply-shop { padding: 32px 22px !important; border-radius: 22px !important; }
+    .apply-shop h3 { font-size: 1.3rem !important; margin-bottom: 14px !important; line-height: 1.55 !important; }
+    .apply-shop p { font-size: 0.86rem !important; margin-bottom: 22px !important; }
+
+    /* Area */
+    .area-region-section { margin-top: 40px !important; }
+    .area-region-title { font-size: 1.08rem !important; margin-bottom: 16px !important; padding-left: 12px !important; border-left-width: 3px !important; }
+    .city-card-grid { grid-template-columns: 1fr 1fr !important; gap: 10px !important; }
+    .city-card { padding: 14px 12px !important; border-radius: 14px !important; border-width: 2px !important; }
+    .city-name { font-size: 0.88rem !important; margin-bottom: 5px !important; }
+    .city-stats { gap: 8px !important; font-size: 0.64rem !important; flex-wrap: wrap; }
+    .feature-city {
+        grid-template-columns: 1fr !important;
+        padding: 28px 22px !important;
+        border-radius: 22px !important;
+        gap: 24px !important;
+        margin-top: 32px !important;
+    }
+    .feature-city-mark { font-size: 2.6rem !important; }
+    .feature-city h3 { font-size: 1.25rem !important; line-height: 1.55 !important; }
+    .feature-city h3 br { display: none !important; }
+    .feature-city p { font-size: 0.86rem !important; line-height: 1.9 !important; }
+    .spot-list li { font-size: 0.78rem !important; padding: 10px 0 !important; gap: 8px; flex-wrap: wrap; }
+    .spot-type { font-size: 0.62rem !important; }
+
+    /* Disaster */
+    .plan-generator { padding: 28px 22px !important; border-radius: 22px !important; margin-top: 32px !important; }
+    .form-row { grid-template-columns: 1fr !important; gap: 14px !important; }
+    .checklist-grid { grid-template-columns: 1fr !important; gap: 14px !important; margin-top: 32px !important; }
+    .checklist-box { padding: 22px !important; border-radius: 18px !important; }
+    .checklist-title { font-size: 1rem !important; margin-bottom: 16px !important; gap: 10px !important; padding-bottom: 12px !important; }
+    .checklist-title-number { width: 26px !important; height: 26px !important; font-size: 0.82rem !important; }
+    .checklist-items li { font-size: 0.82rem !important; padding: 8px 0 8px 24px !important; }
+    .emergency-vets { margin-top: 32px !important; }
+    .vet-card {
+        grid-template-columns: 1fr !important;
+        gap: 8px !important;
+        padding: 18px !important;
+        border-radius: 16px !important;
+        margin-bottom: 12px !important;
+    }
+    .vet-area { font-size: 0.68rem !important; padding: 5px 12px !important; align-self: flex-start; }
+    .vet-name { font-size: 0.95rem !important; }
+    .vet-hours { font-size: 0.76rem !important; }
+
+    /* Latest */
+    .issue-list { grid-template-columns: 1fr !important; gap: 20px !important; margin-top: 32px !important; }
+    .issue-card { border-radius: 18px !important; }
+    .issue-card-cover { padding: 24px !important; }
+    .issue-card-vol { font-size: 2.4rem !important; }
+    .issue-card-title { font-size: 1.1rem !important; }
+    .issue-card-info { padding: 18px 20px !important; }
+    .issue-card-name { font-size: 1rem !important; }
+    .issue-card-features { font-size: 0.78rem !important; }
+    .feature-grid { grid-template-columns: 1fr !important; gap: 14px !important; margin-top: 32px !important; }
+    .feature-article { padding: 22px !important; border-radius: 18px !important; }
+    .feature-article h3 { font-size: 1.05rem !important; margin-bottom: 10px !important; }
+    .feature-article p { font-size: 0.82rem !important; line-height: 1.85 !important; }
+
+    /* Ad */
+    .stat-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+        margin-top: 32px !important;
+    }
+    .stat-card { padding: 20px 12px !important; border-radius: 16px !important; }
+    .stat-number { font-size: 1.6rem !important; }
+    .stat-number .unit { font-size: 0.7rem !important; margin-left: 2px !important; }
+    .stat-label { font-size: 0.68rem !important; letter-spacing: 0.08em !important; }
+
+    .price-grid { grid-template-columns: 1fr !important; gap: 14px !important; margin-top: 32px !important; }
+    .price-card { padding: 28px 22px !important; border-radius: 22px !important; }
+    .price-card.featured { transform: none !important; }
+    .price-size { font-size: 0.72rem !important; letter-spacing: 0.12em !important; margin-bottom: 16px !important; }
+    .price-label { font-size: 1rem !important; margin-bottom: 10px !important; }
+    .price-amount { font-size: 2.1rem !important; }
+    .price-unit { font-size: 0.78rem !important; margin-bottom: 18px !important; }
+    .price-features { padding-top: 18px !important; }
+    .price-features li { font-size: 0.82rem !important; padding: 6px 0 6px 22px !important; }
+
+    .included-section { padding: 32px 22px !important; border-radius: 22px !important; margin-top: 36px !important; }
+    .included-grid { grid-template-columns: 1fr !important; gap: 22px !important; margin-top: 28px !important; }
+    .included-item h4 { font-size: 0.95rem !important; margin-bottom: 8px !important; }
+    .included-item p { font-size: 0.82rem !important; line-height: 1.85 !important; }
+
+    .testimonial { padding: 32px 22px !important; border-radius: 22px !important; margin-top: 32px !important; }
+    .testimonial-quote { font-size: 1.02rem !important; padding: 0 20px !important; line-height: 1.8 !important; margin-bottom: 24px !important; }
+    .testimonial-quote::before, .testimonial-quote::after { font-size: 2rem !important; }
+    .testimonial-quote br { display: none !important; }
+    .testimonial-author { font-size: 0.78rem !important; }
+
+    /* Contact */
+    .contact-grid { grid-template-columns: 1fr !important; gap: 24px !important; margin-top: 32px !important; }
+    .contact-info { padding: 28px 22px !important; border-radius: 22px !important; }
+    .contact-info h3 { font-size: 1.15rem !important; margin-bottom: 22px !important; }
+    .contact-info-label { font-size: 0.66rem !important; letter-spacing: 0.15em !important; margin-bottom: 4px !important; }
+    .contact-info-value { font-size: 0.88rem !important; line-height: 1.7 !important; }
+    .contact-info-item { padding: 16px 0 !important; }
+    .contact-form { padding: 28px 22px !important; border-radius: 22px !important; }
+    .radio-group { grid-template-columns: 1fr 1fr !important; gap: 8px !important; }
+    .radio-option { padding: 11px 10px !important; font-size: 0.8rem !important; border-radius: 12px !important; }
+}
+
+@media (max-width: 380px) {
+    .category-grid { gap: 8px !important; }
+    .city-card-grid, .mega-gallery { gap: 8px !important; }
+    .stat-grid { gap: 8px !important; }
+    .radio-row { grid-template-columns: 1fr !important; }
+}
