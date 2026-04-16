@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>広告掲載について ｜ Lazo 埼玉版</title>
+<meta name="description" content="埼玉のペット家族にまっすぐ届くフリーペーパー、Lazo埼玉版の広告掲載のご案内。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700;900&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+        margin-top: 48px;
+    }
+    .stat-card {
+        background: var(--color-white);
+        padding: 32px;
+        text-align: center;
+        border-radius: 4px;
+        border: 1px solid var(--color-border);
+    }
+    .stat-number {
+        font-family: var(--font-accent);
+        font-size: 2.6rem;
+        color: var(--color-primary);
+        line-height: 1;
+        margin-bottom: 8px;
+        font-style: italic;
+    }
+    .stat-number .unit {
+        font-size: 1rem;
+        color: var(--color-text-sub);
+        font-style: normal;
+        margin-left: 4px;
+    }
+    .stat-label {
+        font-size: 0.85rem;
+        color: var(--color-text-sub);
+        letter-spacing: 0.1em;
+    }
+    .price-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        margin-top: 48px;
+    }
+    @media (max-width: 768px) {
+        .stat-grid { grid-template-columns: repeat(2, 1fr); }
+        .price-grid { grid-template-columns: 1fr; }
+    }
+    .price-card {
+        background: var(--color-white);
+        border: 1px solid var(--color-border);
+        padding: 40px;
+        border-radius: 4px;
+        position: relative;
+    }
+    .price-card.featured {
+        background: var(--color-primary);
+        color: var(--color-cream);
+        border: none;
+    }
+    .price-card.featured .price-label,
+    .price-card.featured .price-amount,
+    .price-card.featured ul {
+        color: var(--color-cream);
+    }
+    .price-label {
+        font-family: var(--font-serif);
+        font-size: 1.1rem;
+        color: var(--color-primary);
+        margin-bottom: 16px;
+    }
+    .price-size {
+        font-family: var(--font-accent);
+        font-size: 0.85rem;
+        letter-spacing: 0.2em;
+        color: var(--color-gold);
+        margin-bottom: 24px;
+    }
+    .price-card.featured .price-size { color: var(--color-gold-light); }
+    .price-amount {
+        font-family: var(--font-accent);
+        font-size: 3rem;
+        font-style: italic;
+        color: var(--color-primary);
+        line-height: 1;
+        margin-bottom: 8px;
+    }
+    .price-unit {
+        font-size: 0.85rem;
+        color: var(--color-text-sub);
+        margin-bottom: 24px;
+    }
+    .price-card.featured .price-unit { color: rgba(248, 243, 234, 0.7); }
+    .price-features {
+        padding-top: 24px;
+        border-top: 1px solid var(--color-border);
+    }
+    .price-card.featured .price-features { border-top-color: rgba(248, 243, 234, 0.2); }
+    .price-features li {
+        padding: 8px 0;
+        padding-left: 24px;
+        position: relative;
+        font-size: 0.9rem;
+    }
+    .price-features li::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: var(--color-gold);
+        font-weight: 700;
+    }
+    .included-section {
+        margin-top: 64px;
+        background: var(--color-cream);
+        padding: 60px;
+        border-radius: 4px;
+    }
+    .included-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        margin-top: 40px;
+    }
+    @media (max-width: 768px) {
+        .included-grid { grid-template-columns: 1fr; }
+        .included-section { padding: 32px; }
+    }
+    .included-item h4 {
+        font-family: var(--font-serif);
+        font-size: 1.1rem;
+        color: var(--color-primary);
+        margin-bottom: 12px;
+    }
+    .included-item p {
+        font-size: 0.9rem;
+        color: var(--color-text-sub);
+        line-height: 1.9;
+    }
+    .testimonial {
+        background: var(--color-cream);
+        padding: 60px;
+        border-radius: 4px;
+        margin-top: 48px;
+    }
+    .testimonial-quote {
+        font-family: var(--font-serif);
+        font-size: 1.5rem;
+        line-height: 1.8;
+        color: var(--color-primary);
+        text-align: center;
+        margin-bottom: 32px;
+        position: relative;
+        padding: 0 40px;
+    }
+    .testimonial-quote::before, .testimonial-quote::after {
+        font-family: var(--font-accent);
+        color: var(--color-gold);
+        font-size: 3rem;
+        position: absolute;
+        line-height: 1;
+    }
+    .testimonial-quote::before { content: '“'; top: -20px; left: 0; }
+    .testimonial-quote::after { content: '”'; bottom: -40px; right: 0; }
+    .testimonial-author {
+        text-align: center;
+        color: var(--color-text-sub);
+        font-size: 0.9rem;
+    }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="header-inner">
+        <a href="index.html" class="site-logo">
+            <span class="site-logo-mark">Lazo</span>
+            <span class="site-logo-sub">SAITAMA</span>
+        </a>
+        <nav class="site-nav">
+            <ul>
+                <li><a href="about.html">Lazoとは</a></li>
+                <li><a href="latest.html">最新号</a></li>
+                <li><a href="area.html">うちの町</a></li>
+                <li><a href="community.html">うちの子</a></li>
+                <li><a href="shops.html">設置店</a></li>
+                <li><a href="ad.html">広告掲載</a></li>
+            </ul>
+            <a href="contact.html" class="header-cta">お問い合わせ</a>
+        </nav>
+        <button class="menu-toggle" aria-label="メニュー"><span></span><span></span><span></span></button>
+    </div>
+</header>
+
+<section class="page-hero">
+    <div class="container">
+        <div class="page-hero-eyebrow">FOR ADVERTISERS</div>
+        <h1 class="page-hero-title">広告掲載について</h1>
+        <p class="page-hero-lead">埼玉の「ペット家族」に、あなたのお店のステキをまっすぐ届けませんか？</p>
+    </div>
+</section>
+
+<nav class="breadcrumb">
+    <ol>
+        <li><a href="index.html">ホーム</a></li>
+        <li>広告掲載について</li>
+    </ol>
+</nav>
+
+<!-- Stats -->
+<section>
+    <div class="container">
+        <div class="section-header">
+            <span class="section-eyebrow">MEDIA DATA</span>
+            <h2 class="section-title">媒体データ</h2>
+            <p class="section-lead">
+                埼玉県内の「ペットと暮らす家族」にピンポイントでリーチできる<br>
+                唯一のペット専用フリーペーパーです。
+            </p>
+        </div>
+
+        <div class="stat-grid">
+            <div class="stat-card">
+                <div class="stat-number">10,000<span class="unit">部</span></div>
+                <div class="stat-label">発行部数 / 号</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">300<span class="unit">ヶ所</span></div>
+                <div class="stat-label">設置店舗数</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">4<span class="unit">回 / 年</span></div>
+                <div class="stat-label">発行頻度</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">63<span class="unit">市町村</span></div>
+                <div class="stat-label">対応エリア（埼玉全域）</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pricing -->
+<section class="pillars">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-eyebrow">PRICING</span>
+            <h2 class="section-title">あなたのお店に合わせて選べる<br>3つの広告プラン</h2>
+            <p class="section-lead">
+                紙の情報誌と、これから始まるWebサイト・LINEを組み合わせて<br>
+                ペット家族にまっすぐ届けられる広告プランです。<br>
+                制作・印刷・配送すべて込み、初回からお気軽にご相談ください。
+            </p>
+        </div>
+
+        <div class="price-grid" style="grid-template-columns: repeat(3, 1fr);">
+            <div class="price-card">
+                <div class="price-size">🌱 STARTER</div>
+                <div class="price-label">スタータープラン</div>
+                <div class="price-amount">¥99,000</div>
+                <div class="price-unit">税抜 / 年4回お届け</div>
+                <ul class="price-features">
+                    <li><strong>初号は 1/3 ページ</strong> で大きく</li>
+                    <li>2〜4号目は 1/6 ページ</li>
+                    <li>紙面制作・デザイン込み</li>
+                    <li>設置店マップに店舗情報掲載</li>
+                    <li>初めての方におすすめ</li>
+                </ul>
+            </div>
+
+            <div class="price-card featured">
+                <div class="price-size">🌿 GROWTH</div>
+                <div class="price-label">グロースプラン</div>
+                <div class="price-amount">¥280,000</div>
+                <div class="price-unit">税抜 / 年4回お届け</div>
+                <ul class="price-features">
+                    <li>全4号 <strong>1/2 ページ</strong> 掲載</li>
+                    <li>紙面制作・デザイン込み</li>
+                    <li><strong>Webサイト広告枠に掲載</strong></li>
+                    <li>店舗詳細ページを作成</li>
+                    <li>SNS（Instagram）でご紹介</li>
+                </ul>
+                <div style="position: absolute; top: -12px; right: 20px; background: var(--color-yellow); color: var(--color-primary); padding: 6px 16px; border-radius: 20px; font-size: 0.75rem; font-weight: 700;">おすすめ</div>
+            </div>
+
+            <div class="price-card">
+                <div class="price-size">🌳 PARTNER</div>
+                <div class="price-label">パートナープラン</div>
+                <div class="price-amount">¥500,000<span style="font-size: 0.5em;">〜</span></div>
+                <div class="price-unit">税抜 / 年4回お届け</div>
+                <ul class="price-features">
+                    <li>全4号 <strong>1 ページ</strong> 掲載</li>
+                    <li>紙面制作・デザイン込み</li>
+                    <li>Web <strong>特設ページ</strong>を作成</li>
+                    <li><strong>LINE読者へ月1配信</strong></li>
+                    <li>広告主コミュニティ参加権</li>
+                    <li>取材記事を1本制作</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="margin-top: 40px; padding: 32px; background: var(--color-cream); border-radius: 24px; text-align: center; border: 2px dashed var(--color-gold-light);">
+            <p style="margin-bottom: 12px; font-family: var(--font-serif); color: var(--color-primary); font-size: 1.1rem;">
+                📢 単号のみのお試し掲載もご相談可能です
+            </p>
+            <p style="color: var(--color-text-sub); font-size: 0.9rem;">
+                「まずは1号だけ試してみたい」「裏表紙を検討したい」など、柔軟にご提案いたします。<br>
+                まずはお気軽にお問い合わせください。
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Included -->
+<section>
+    <div class="container">
+        <div class="section-header">
+            <span class="section-eyebrow">WHAT'S INCLUDED</span>
+            <h2 class="section-title">すべて、込みの料金です。</h2>
+            <p class="section-lead">
+                追加費用なしで、出稿から配布までワンストップ。<br>
+                はじめての方にも、安心してご利用いただけます。
+            </p>
+        </div>
+
+        <div class="included-section">
+            <div class="included-grid">
+                <div class="included-item">
+                    <h4>01. 紙面制作・デザイン</h4>
+                    <p>プロデザイナーが、お店の魅力を引き出す紙面を制作します。ご要望に合わせて3回まで修正対応いたします。</p>
+                </div>
+                <div class="included-item">
+                    <h4>02. 印刷・製本</h4>
+                    <p>上質なフルカラー印刷で、10,000部を発行。仕上がりの質の高さも、Lazoの自慢のひとつです。</p>
+                </div>
+                <div class="included-item">
+                    <h4>03. 県内300ヶ所への配布</h4>
+                    <p>埼玉県内の動物病院・ペットショップ・カフェ等、ペット家族が必ず訪れる場所に直接お届けします。</p>
+                </div>
+                <div class="included-item">
+                    <h4>04. Webサイトへの転載</h4>
+                    <p>当サイト上でも広告を掲載、さらに「設置店マップ」にお店情報を無料で掲載いたします。</p>
+                </div>
+                <div class="included-item">
+                    <h4>05. SNSでの紹介</h4>
+                    <p>Lazo埼玉版の公式Instagram・Xでもご紹介。新規フォロワーへのリーチにもつながります。</p>
+                </div>
+                <div class="included-item">
+                    <h4>06. 年間契約は15%OFF</h4>
+                    <p>4号分を年間契約いただくと、15%OFFでご提供。お得に、継続的にPRいただけます。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonial -->
+<section class="pillars">
+    <div class="container-narrow">
+        <div class="section-header">
+            <span class="section-eyebrow">TESTIMONIAL</span>
+            <h2 class="section-title">広告主さまの声</h2>
+        </div>
+
+        <div class="testimonial">
+            <div class="testimonial-quote">
+                Lazoに広告を出してから、<br>
+                地元の飼い主さんから<br>
+                「Lazoで見ました」と声をかけられるように。<br>
+                地域での認知が、確実に変わりました。
+            </div>
+            <div class="testimonial-author">
+                ― 川越市のトリミングサロン様（Vol.01より掲載）
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="ad-cta">
+    <div class="container">
+        <div class="ad-cta-box">
+            <div>
+                <span class="ad-cta-eyebrow">GET STARTED</span>
+                <h2 class="ad-cta-title">まずは、お気軽にご相談ください。</h2>
+                <p class="ad-cta-text">
+                    媒体資料のご請求、お見積り、掲載内容のご相談など、<br>
+                    どんな小さなことでもお気軽にお問い合わせください。<br>
+                    担当より、丁寧にご説明させていただきます。
+                </p>
+                <a href="contact.html?type=ad" class="btn btn-primary">資料請求・お問い合わせ <span class="btn-arrow">→</span></a>
+            </div>
+            <div class="ad-cta-pricing">
+                <div class="ad-cta-pricing-label">次号の締切</div>
+                <div style="font-family: var(--font-serif); font-size: 1.8rem; color: var(--color-primary); margin-bottom: 16px;">Vol.03 春号</div>
+                <div style="font-size: 0.9rem; color: var(--color-text-sub); line-height: 1.9; margin-bottom: 24px;">
+                    <strong style="color: var(--color-gold);">原稿締切：2026年4月15日</strong><br>
+                    発行日：2026年5月12日<br>
+                    配布期間：2026年5〜7月
+                </div>
+                <div style="padding: 16px; background: var(--color-cream); border-radius: 4px; font-size: 0.85rem; color: var(--color-text);">
+                    お急ぎください。<br>残り枠数に限りがございます。
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <a href="index.html" class="site-logo">
+                    <span class="site-logo-mark">Lazo</span>
+                    <span class="site-logo-sub">SAITAMA</span>
+                </a>
+                <p class="footer-tagline">ペットと、ステキに暮らす。<br>埼玉の、新しい毎日。</p>
+            </div>
+            <div class="footer-nav">
+                <h4>ABOUT</h4>
+                <ul><li><a href="about.html">Lazoとは</a></li><li><a href="latest.html">最新号</a></li></ul>
+            </div>
+            <div class="footer-nav">
+                <h4>CONTENT</h4>
+                <ul><li><a href="area.html">うちの町のLazo</a></li><li><a href="community.html">うちの子自慢</a></li><li><a href="shops.html">設置店を探す</a></li></ul>
+            </div>
+            <div class="footer-nav">
+                <h4>CONTACT</h4>
+                <ul><li><a href="ad.html">広告掲載</a></li><li><a href="contact.html">お問い合わせ</a></li></ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>© <span data-current-year>2026</span> 株式会社スペーススタッフ / Lazo 埼玉版</div>
+        </div>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>うちの町のLazo ｜ Lazo 埼玉版</title>
+<meta name="description" content="さいたま市・川越市・所沢市など、埼玉県内の市町村別ペット情報。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700;900&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+    .area-region-section { margin-top: 64px; }
+    .area-region-title {
+        font-family: var(--font-serif);
+        font-size: 1.4rem;
+        color: var(--color-primary);
+        margin-bottom: 24px;
+        padding-left: 16px;
+        border-left: 3px solid var(--color-gold);
+    }
+    .city-card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 16px;
+    }
+    .city-card {
+        background: var(--color-white);
+        padding: 24px;
+        border-radius: 4px;
+        border: 1px solid var(--color-border);
+        transition: var(--transition-base);
+        cursor: pointer;
+    }
+    .city-card:hover {
+        transform: translateY(-2px);
+        border-color: var(--color-gold);
+    }
+    .city-name {
+        font-family: var(--font-serif);
+        font-size: 1.1rem;
+        color: var(--color-primary);
+        margin-bottom: 8px;
+    }
+    .city-stats {
+        display: flex;
+        gap: 16px;
+        font-size: 0.75rem;
+        color: var(--color-text-sub);
+    }
+    .city-stats span { display: flex; align-items: center; gap: 4px; }
+    .feature-city {
+        background: var(--color-primary);
+        color: var(--color-cream);
+        padding: 60px;
+        border-radius: 4px;
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        gap: 48px;
+        align-items: center;
+        margin-top: 48px;
+    }
+    .feature-city-mark {
+        font-family: var(--font-accent);
+        font-size: 5rem;
+        font-style: italic;
+        color: var(--color-gold-light);
+        line-height: 1;
+    }
+    .feature-city h3 {
+        color: var(--color-cream);
+        font-size: 1.8rem;
+        margin: 16px 0;
+    }
+    .feature-city p {
+        color: rgba(248, 243, 234, 0.8);
+        line-height: 2;
+    }
+    .spot-list {
+        margin-top: 24px;
+    }
+    .spot-list li {
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(248, 243, 234, 0.15);
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.9rem;
+    }
+    .spot-list li:last-child { border-bottom: none; }
+    .spot-type {
+        font-size: 0.75rem;
+        color: var(--color-gold-light);
+        letter-spacing: 0.1em;
+    }
+    @media (max-width: 768px) {
+        .feature-city {
+            grid-template-columns: 1fr;
+            padding: 32px;
+        }
+    }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="header-inner">
+        <a href="index.html" class="site-logo">
+            <span class="site-logo-mark">Lazo</span>
+            <span class="site-logo-sub">SAITAMA</span>
+        </a>
+        <nav class="site-nav">
+            <ul>
+                <li><a href="about.html">Lazoとは</a></li>
+                <li><a href="latest.html">最新号</a></li>
+                <li><a href="kotogoto.html">お困りごと</a></li>
+                <li><a href="area.html">うちの町</a></li>
+                <li><a href="shops.html">設置店</a></li>
+                <li><a href="ad.html">広告掲載</a></li>
+            </ul>
+            <a href="contact.html" class="header-cta">お問い合わせ</a>
+        </nav>
+        <button class="menu-toggle" aria-label="メニュー"><span></span><span></span><span></span></button>
+    </div>
+</header>
+
+<section class="page-hero">
+    <div class="container">
+        <div class="page-hero-eyebrow">LOCAL GUIDE</div>
+        <h1 class="page-hero-title">うちの町のLazo</h1>
+        <p class="page-hero-lead">埼玉県全63市町村、それぞれの町で楽しむペット暮らしのヒントを集めました。</p>
+    </div>
+</section>
+
+<nav class="breadcrumb">
+    <ol>
+        <li><a href="index.html">ホーム</a></li>
+        <li>うちの町のLazo</li>
+    </ol>
+</nav>
+
+<!-- Featured City -->
+<section>
+    <div class="container">
+        <div class="section-header">
+            <span class="section-eyebrow">FEATURED CITY</span>
+            <h2 class="section-title">今月のピックアップタウン｜川越市</h2>
+        </div>
+
+        <div class="feature-city">
+            <div>
+                <div class="feature-city-mark">Kawagoe</div>
+                <h3>小江戸・川越で過ごす<br>ステキな週末。</h3>
+                <p>
+                    古い町並みを愛犬と散歩したり、ペット可の古民家カフェでひと休み。
+                    川越にはペットと一緒に楽しめる場所がたくさんあります。
+                    Lazo編集部が実際に歩いて見つけた、おすすめスポットをご紹介。
+                </p>
+            </div>
+            <div>
+                <ul class="spot-list">
+                    <li>
+                        <div><strong>cafe mame-ya</strong><br>愛犬と入れる古民家カフェ</div>
+                        <span class="spot-type">CAFE</span>
+                    </li>
+                    <li>
+                        <div><strong>川越水上公園ドッグラン</strong><br>芝生が気持ちいい広大なラン</div>
+                        <span class="spot-type">DOGRUN</span>
+                    </li>
+                    <li>
+                        <div><strong>菓匠右門 時の鐘店</strong><br>ペット連れOKテラス席</div>
+                        <span class="spot-type">SWEETS</span>
+                    </li>
+                    <li>
+                        <div><strong>川越 ホシノ動物病院</strong><br>獣医師推薦のかかりつけ病院</div>
+                        <span class="spot-type">HOSPITAL</span>
+                    </li>
+                    <li>
+                        <div><strong>PETEMO川越</strong><br>サロン・用品まるごと揃う</div>
+                        <span class="spot-type">SHOP</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- All Cities -->
+<section class="pillars">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-eyebrow">ALL CITIES</span>
+            <h2 class="section-title">埼玉県 全市町村</h2>
+            <p class="section-lead">市町村ごとの設置店・ペット可スポット・動物病院情報をお届けします。</p>
+        </div>
+
+        <!-- さいたま中央 -->
+        <div class="area-region-section">
+            <h3 class="area-region-title">さいたま・中央エリア</h3>
+            <div class="city-card-grid">
+                <div class="city-card">
+                    <div class="city-name">さいたま市</div>
+                    <div class="city-stats"><span>🏥 92</span><span>☕ 28</span><span>📍 36</span></div>
+                </div>
+                <div class="city-card">
+                    <div class="city-name">川口市</div>
+                    <div class="city-stats"><span>🏥 48</span><span>☕ 18</span><span>📍 22</span></div>
+                </div>
+                <div class="city-card">
+                    <div class="city-name">戸田市</div>
+                    <div class="city-stats"><span>🏥 14</span><span>☕ 6</span><span>📍 8</span></div>
+                </div>
+                <div class="city-card">
+                    <div class="city-name">蕨市</div>
+                    <div class="city-stats"><span>🏥 8</span><span>☕ 3</span><span>📍 5</span></div>
+                </div>
+                <div class="city-card">
+                    <div class="city-name">鴻巣市</div>
+                    <div class="city-stats"><span>🏥 9</span><span>☕ 4</span><span>📍 6</span></div>
+                </div>
+                <div class="city-card">
+                    <div class="city-name">上尾市</div>
+                    <div class="city-stats"><span>🏥 15</span><span>☕ 8</span><span>📍 10</span></div>
+                </div>
+                <div class="city-card">
+                    <div class="city-name">桶川市</div>
+                    <div class="city-stats"><span>🏥 6</span><span>☕ 3</span><span>📍 5</span></div>
+                </div>
+                <div class="city-card">
+                    <div class="city-name">北本市</div>
+                    <div class="city-stats"><span>🏥 5</span><span>☕ 2</span><span>📍 4</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 東部 -->
+        <div class="area-region-section">
+            <h3 class="area-region-title">東部エリア</h3>
+            <div class="city-card-grid">
+                <div class="city-card">
+                    <div class="city-name">越谷市</div>
+                    <div class="city-stats"><span>🏥 28</span><span>☕ 12</span><span>📍 18</span></div>
+                </div>
+                <div class="city-card">
+                    <div class="city-name">草加市</div>
+                    <div class="city-stats"><span>🏥 22</span><span>☕ 8</span><span>📍 14</span></div>
+                </div>
+                <div class="city-card">
+                    <div class="city-name">春日部市</div>
+                    <div class="city-stats"><span>🏥 24</span><span>☕ 8</span><span>📍 12</span></div>
+                </div>
+                <div class="city-card">
+                    <div class="city-name">三郷市</div>
+                    <div class="city-stats"><span>🏥 12</span><span>☕ 6</span><span>📍 8</span></div>
+                </div>
+                <div class="city-card">
+                    <div class="city-name">吉川市</div>
+                    <div class="city-stats"><span>🏥 5</span><span>☕ 3</span><span>📍 4</span></div>
+                </div>
+                <div class="city-card">
+                    <div class="city-name">八潮市</div>
+                    <div class="city-stats"><span>🏥 8</span><span>☕ 4</span><span>📍 5</span></div>
+                </div>
+                <div class="city-card">
+                    <div class="city-name">久喜市</div>
+                    <div class="city-stats"><span>🏥 11</span><span>☕ 4</span><span>📍 6</span></div>
+                </div>
+                <div class="city-card">
+                    <div class="city-name">幸手市</div>
+                    <div class="city-stats"><span>🏥 4</span><span>☕ 2</span><span>📍 3</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 西部 -->
+        <div class="area-region-section">
+            <h3 class="area-region-title">西部・所沢エリア</h3>
+            <div class="city-card-grid">
+                <div class="city-card">
+                    <div class="city-name">川越市</div>
+                    <div class="city-stats"><span>🏥 32</span><span>☕ 16</span><span>📍 20</span></div>
+                </div>
+                <div class="city-card">
+                    <div class="city-name">所沢市</div>
+                    <div class="city-stats"><span>🏥 28</span><span>☕ 12</span><span>📍 18</span></div>
+                </div>
+                <div class="city-card">
+                    <div class="city-name">入間市</div>
+                    <div class="city-stats"><span>🏥 12</span><span>☕ 6</span><span>📍 8</span></div>
+                </div>
+                <div class="city-card">
+                    <div class="city-name">狭山市</div>
+                    <div class="city-stats"><span>🏥 11</span><span>☕ 5</span><span>📍 7</span></div>
+                </div>
+                <div class="city-card">
+                    <div class="city-name">飯能市</div>
+                    <div class="city-stats"><span>🏥 7</span><span>☕ 4</span><span>📍 5</span></div>
+                </div>
+                <div class="city-card">
+                    <div class="city-name">日高市</div>
+                    <div class="city-stats"><span>🏥 5</span><span>☕ 3</span><span>📍 4</span></div>
+                </div>
+                <div class="city-card">
+                    <div class="city-name">朝霞市</div>
+                    <div class="city-stats"><span>🏥 14</span><span>☕ 7</span><span>📍 9</span></div>
+                </div>
+                <div class="city-card">
+                    <div class="city-name">志木市</div>
+                    <div class="city-stats"><span>🏥 7</span><span>☕ 3</span><span>📍 4</span></div>
+                </div>
+                <div class="city-card">
+                    <div class="city-name">新座市</div>
+                    <div class="city-stats"><span>🏥 10</span><span>☕ 5</span><span>📍 6</span></div>
+                </div>
+                <div class="city-card">
+                    <div class="city-name">和光市</div>
+                    <div class="city-stats"><span>🏥 6</span><span>☕ 3</span><span>📍 5</span></div>
+                </div>
+                <div class="city-card">
+                    <div class="city-name">富士見市</div>
+                    <div class="city-stats"><span>🏥 8</span><span>☕ 4</span><span>📍 6</span></div>
+                </div>
+                <div class="city-card">
+                    <div class="city-name">ふじみ野市</div>
+                    <div class="city-stats"><span>🏥 7</span><span>☕ 4</span><span>📍 5</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 北部 -->
+        <div class="area-region-section">
+            <h3 class="area-region-title">北部・秩父エリア</h3>
+            <div class="city-card-grid">
+                <div class="city-card">
+                    <div class="city-name">熊谷市</div>
+                    <div class="city-stats"><span>🏥 18</span><span>☕ 6</span><span>📍 10</span></div>
+                </div>
+                <div class="city-card">
+                    <div class="city-name">行田市</div>
+                    <div class="city-stats"><span>🏥 6</span><span>☕ 3</span><span>📍 4</span></div>
+                </div>
+                <div class="city-card">
+                    <div class="city-name">深谷市</div>
+                    <div class="city-stats"><span>🏥 11</span><span>☕ 5</span><span>📍 7</span></div>
+                </div>
+                <div class="city-card">
+                    <div class="city-name">本庄市</div>
+                    <div class="city-stats"><span>🏥 7</span><span>☕ 4</span><span>📍 5</span></div>
+                </div>
+                <div class="city-card">
+                    <div class="city-name">秩父市</div>
+                    <div class="city-stats"><span>🏥 6</span><span>☕ 4</span><span>📍 6</span></div>
+                </div>
+                <div class="city-card">
+                    <div class="city-name">東松山市</div>
+                    <div class="city-stats"><span>🏥 9</span><span>☕ 5</span><span>📍 6</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 48px; color: var(--color-text-sub); font-size: 0.9rem;">
+            ※ カウントは動物病院🏥／ペット可カフェ☕／その他スポット📍の概数です
+        </div>
+    </div>
+</section>
+
+<!-- Free Shop Listing -->
+<section>
+    <div class="container">
+        <div style="background: linear-gradient(135deg, var(--color-yellow) 0%, var(--color-mint-light) 100%); border-radius: 40px; padding: 60px; position: relative; overflow: hidden;">
+            <div style="position: absolute; top: -30px; right: 40px; font-size: 10rem; opacity: 0.18; transform: rotate(15deg);">🎁</div>
+            <div style="display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center; position: relative;">
+                <div>
+                    <span style="display: inline-block; padding: 8px 20px; background: var(--color-coral); color: var(--color-white); border-radius: 40px; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.1em; margin-bottom: 20px; box-shadow: 0 6px 18px rgba(255, 138, 122, 0.3);">🎁 ずっと無料</span>
+                    <h2 style="font-family: var(--font-serif); font-size: 2rem; color: var(--color-primary); margin-bottom: 16px; font-weight: 900; line-height: 1.5;">
+                        あなたの町のお店も、<br>この地図に載せませんか？
+                    </h2>
+                    <p style="color: var(--color-text); line-height: 2; max-width: 640px;">
+                        動物病院・トリミングサロン・ペットショップ・ペット可カフェ…<br>
+                        埼玉県内のペット関連店舗さま、Webサイトへの掲載は<strong>ずっと無料</strong>です。<br>
+                        市町村別ページから、あなたのお店が見つかる場をご提供します。
+                    </p>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="shop-register.html" class="btn btn-primary">無料で掲載申込 <span class="btn-arrow">→</span></a>
+                    <a href="ad.html" class="btn btn-outline" style="background: transparent;">有料プランを見る</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- お困りごと link -->
+<section class="pillars">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-eyebrow">NEED HELP?</span>
+            <h2 class="section-title">お店を探す前に、<br>お困りごとを解決しませんか？</h2>
+            <p class="section-lead">
+                「どこに相談すればいいか分からない」そんな時は、<br>
+                まずカテゴリから、該当する専門家や解決策を探せます。
+            </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-top: 48px;">
+            <a href="kotogoto.html#health" style="background: var(--color-white); border-radius: 20px; padding: 24px 16px; text-align: center; border: 2px solid var(--color-cream-deep); text-decoration: none; color: inherit; transition: all 0.3s;">
+                <div style="font-size: 2.5rem; line-height: 1; margin-bottom: 12px;">🏥</div>
+                <div style="font-family: var(--font-serif); font-weight: 700; color: var(--color-primary); font-size: 0.95rem;">健康・病気</div>
+            </a>
+            <a href="kotogoto.html#training" style="background: var(--color-white); border-radius: 20px; padding: 24px 16px; text-align: center; border: 2px solid var(--color-cream-deep); text-decoration: none; color: inherit;">
+                <div style="font-size: 2.5rem; line-height: 1; margin-bottom: 12px;">🐕</div>
+                <div style="font-family: var(--font-serif); font-weight: 700; color: var(--color-primary); font-size: 0.95rem;">しつけ</div>
+            </a>
+            <a href="kotogoto.html#food" style="background: var(--color-white); border-radius: 20px; padding: 24px 16px; text-align: center; border: 2px solid var(--color-cream-deep); text-decoration: none; color: inherit;">
+                <div style="font-size: 2.5rem; line-height: 1; margin-bottom: 12px;">🍽</div>
+                <div style="font-family: var(--font-serif); font-weight: 700; color: var(--color-primary); font-size: 0.95rem;">ごはん</div>
+            </a>
+            <a href="kotogoto.html#disaster" style="background: var(--color-white); border-radius: 20px; padding: 24px 16px; text-align: center; border: 2px solid var(--color-cream-deep); text-decoration: none; color: inherit;">
+                <div style="font-size: 2.5rem; line-height: 1; margin-bottom: 12px;">⛑</div>
+                <div style="font-family: var(--font-serif); font-weight: 700; color: var(--color-primary); font-size: 0.95rem;">防災</div>
+            </a>
+            <a href="kotogoto.html#senior" style="background: var(--color-white); border-radius: 20px; padding: 24px 16px; text-align: center; border: 2px solid var(--color-cream-deep); text-decoration: none; color: inherit;">
+                <div style="font-size: 2.5rem; line-height: 1; margin-bottom: 12px;">👴</div>
+                <div style="font-family: var(--font-serif); font-weight: 700; color: var(--color-primary); font-size: 0.95rem;">シニアケア</div>
+            </a>
+        </div>
+
+        <div style="text-align: center; margin-top: 32px;">
+            <a href="kotogoto.html" class="btn btn-outline">すべてのお困りごとを見る <span class="btn-arrow">→</span></a>
+        </div>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <a href="index.html" class="site-logo">
+                    <span class="site-logo-mark">Lazo</span>
+                    <span class="site-logo-sub">SAITAMA</span>
+                </a>
+                <p class="footer-tagline">ペットと、ステキに暮らす。<br>埼玉の、新しい毎日。</p>
+            </div>
+            <div class="footer-nav">
+                <h4>ABOUT</h4>
+                <ul>
+                    <li><a href="about.html">Lazoとは</a></li>
+                    <li><a href="latest.html">最新号</a></li>
+                </ul>
+            </div>
+            <div class="footer-nav">
+                <h4>CONTENT</h4>
+                <ul>
+                    <li><a href="area.html">うちの町のLazo</a></li>
+                    <li><a href="community.html">うちの子自慢</a></li>
+                    <li><a href="shops.html">設置店を探す</a></li>
+                </ul>
+            </div>
+            <div class="footer-nav">
+                <h4>CONTACT</h4>
+                <ul>
+                    <li><a href="ad.html">広告掲載</a></li>
+                    <li><a href="contact.html">お問い合わせ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>© <span data-current-year>2026</span> 株式会社スペーススタッフ / Lazo 埼玉版</div>
+        </div>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

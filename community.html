@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>うちの子自慢 ｜ Lazo 埼玉版</title>
+<meta name="description" content="埼玉の飼い主さんから届いた、愛すべき家族たちの写真ギャラリー。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700;900&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+    .gallery-filter {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 48px;
+        flex-wrap: wrap;
+    }
+    .filter-btn {
+        padding: 10px 24px;
+        background: var(--color-white);
+        border: 1px solid var(--color-border);
+        font-size: 0.85rem;
+        letter-spacing: 0.1em;
+        color: var(--color-text);
+        border-radius: 40px;
+        transition: var(--transition-base);
+        cursor: pointer;
+    }
+    .filter-btn.active,
+    .filter-btn:hover {
+        background: var(--color-primary);
+        color: var(--color-cream);
+        border-color: var(--color-primary);
+    }
+    .mega-gallery {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+        margin-top: 48px;
+    }
+    @media (max-width: 768px) {
+        .mega-gallery { grid-template-columns: repeat(2, 1fr); }
+    }
+    .story-feature {
+        background: var(--color-cream);
+        padding: 60px;
+        border-radius: 4px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        align-items: center;
+        margin-top: 64px;
+    }
+    .story-feature-image {
+        aspect-ratio: 4/3;
+        background: linear-gradient(135deg, var(--color-arakawa), var(--color-chichibu));
+        border-radius: 4px;
+        overflow: hidden;
+    }
+    .story-feature-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .story-feature h3 {
+        font-size: 1.8rem;
+        color: var(--color-primary);
+        margin-bottom: 24px;
+        line-height: 1.5;
+    }
+    .story-quote {
+        font-family: var(--font-serif);
+        font-size: 1.1rem;
+        color: var(--color-gold);
+        border-left: 2px solid var(--color-gold);
+        padding-left: 20px;
+        margin: 24px 0;
+        font-style: italic;
+    }
+    .submit-form {
+        max-width: 720px;
+        margin: 48px auto 0;
+        background: var(--color-white);
+        padding: 48px;
+        border: 1px solid var(--color-border);
+        border-radius: 4px;
+    }
+    @media (max-width: 768px) {
+        .story-feature { grid-template-columns: 1fr; padding: 32px; }
+        .submit-form { padding: 32px 24px; }
+    }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="header-inner">
+        <a href="index.html" class="site-logo">
+            <span class="site-logo-mark">Lazo</span>
+            <span class="site-logo-sub">SAITAMA</span>
+        </a>
+        <nav class="site-nav">
+            <ul>
+                <li><a href="about.html">Lazoとは</a></li>
+                <li><a href="latest.html">最新号</a></li>
+                <li><a href="area.html">うちの町</a></li>
+                <li><a href="community.html">うちの子</a></li>
+                <li><a href="shops.html">設置店</a></li>
+                <li><a href="ad.html">広告掲載</a></li>
+            </ul>
+            <a href="contact.html" class="header-cta">お問い合わせ</a>
+        </nav>
+        <button class="menu-toggle" aria-label="メニュー"><span></span><span></span><span></span></button>
+    </div>
+</header>
+
+<section class="page-hero">
+    <div class="container">
+        <div class="page-hero-eyebrow">READERS' PHOTOS</div>
+        <h1 class="page-hero-title">うちの子自慢</h1>
+        <p class="page-hero-lead">読者のみなさんから届いた、ステキな家族の写真をご紹介しています。</p>
+    </div>
+</section>
+
+<nav class="breadcrumb">
+    <ol>
+        <li><a href="index.html">ホーム</a></li>
+        <li>うちの子自慢</li>
+    </ol>
+</nav>
+
+<!-- Gallery -->
+<section>
+    <div class="container">
+        <div class="section-header">
+            <span class="section-eyebrow">GALLERY</span>
+            <h2 class="section-title">埼玉のうちの子たち。</h2>
+            <p class="section-lead">
+                さいたま、川越、所沢、越谷、春日部…<br>
+                埼玉のすみずみから届いた、ステキな家族の表情をどうぞ。
+            </p>
+        </div>
+
+        <div class="gallery-filter">
+            <button class="filter-btn active">すべて</button>
+            <button class="filter-btn">犬</button>
+            <button class="filter-btn">猫</button>
+            <button class="filter-btn">小動物</button>
+            <button class="filter-btn">誌面掲載</button>
+        </div>
+
+        <div class="mega-gallery">
+            <div class="community-card">
+                <div class="community-card-image"><img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=400&auto=format&fit=crop" alt=""></div>
+                <div class="community-card-content">
+                    <div class="community-card-name">モカちゃん</div>
+                    <div class="community-card-meta">川越市 ・ 柴犬 ・ 4歳</div>
+                </div>
+            </div>
+            <div class="community-card">
+                <div class="community-card-image"><img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=400&auto=format&fit=crop" alt=""></div>
+                <div class="community-card-content">
+                    <div class="community-card-name">こたろう</div>
+                    <div class="community-card-meta">さいたま市 ・ 猫 ・ 7歳</div>
+                </div>
+            </div>
+            <div class="community-card">
+                <div class="community-card-image"><img src="https://images.unsplash.com/photo-1561037404-61cd46aa615b?w=400&auto=format&fit=crop" alt=""></div>
+                <div class="community-card-content">
+                    <div class="community-card-name">ラテちゃん</div>
+                    <div class="community-card-meta">所沢市 ・ トイプードル ・ 2歳</div>
+                </div>
+            </div>
+            <div class="community-card">
+                <div class="community-card-image"><img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=400&auto=format&fit=crop" alt=""></div>
+                <div class="community-card-content">
+                    <div class="community-card-name">さくら</div>
+                    <div class="community-card-meta">越谷市 ・ チワワ ・ 9歳</div>
+                </div>
+            </div>
+            <div class="community-card">
+                <div class="community-card-image"><img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?w=400&auto=format&fit=crop" alt=""></div>
+                <div class="community-card-content">
+                    <div class="community-card-name">ミミ</div>
+                    <div class="community-card-meta">川口市 ・ 猫 ・ 3歳</div>
+                </div>
+            </div>
+            <div class="community-card">
+                <div class="community-card-image"><img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=400&auto=format&fit=crop" alt=""></div>
+                <div class="community-card-content">
+                    <div class="community-card-name">はな</div>
+                    <div class="community-card-meta">熊谷市 ・ ポメラニアン ・ 5歳</div>
+                </div>
+            </div>
+            <div class="community-card">
+                <div class="community-card-image"><img src="https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?w=400&auto=format&fit=crop" alt=""></div>
+                <div class="community-card-content">
+                    <div class="community-card-name">トム</div>
+                    <div class="community-card-meta">春日部市 ・ 柴犬 ・ 11歳</div>
+                </div>
+            </div>
+            <div class="community-card">
+                <div class="community-card-image"><img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&auto=format&fit=crop" alt=""></div>
+                <div class="community-card-content">
+                    <div class="community-card-name">チョコ</div>
+                    <div class="community-card-meta">上尾市 ・ ラブラドール ・ 6歳</div>
+                </div>
+            </div>
+            <div class="community-card">
+                <div class="community-card-image"><img src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=400&auto=format&fit=crop" alt=""></div>
+                <div class="community-card-content">
+                    <div class="community-card-name">ルル</div>
+                    <div class="community-card-meta">草加市 ・ 猫 ・ 4歳</div>
+                </div>
+            </div>
+            <div class="community-card">
+                <div class="community-card-image"><img src="https://images.unsplash.com/photo-1552053831-71594a27632d?w=400&auto=format&fit=crop" alt=""></div>
+                <div class="community-card-content">
+                    <div class="community-card-name">ココ</div>
+                    <div class="community-card-meta">川越市 ・ マルチーズ ・ 8歳</div>
+                </div>
+            </div>
+            <div class="community-card">
+                <div class="community-card-image"><img src="https://images.unsplash.com/photo-1571566882372-1598d88abd90?w=400&auto=format&fit=crop" alt=""></div>
+                <div class="community-card-content">
+                    <div class="community-card-name">そら</div>
+                    <div class="community-card-meta">朝霞市 ・ コーギー ・ 3歳</div>
+                </div>
+            </div>
+            <div class="community-card">
+                <div class="community-card-image"><img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?w=400&auto=format&fit=crop" alt=""></div>
+                <div class="community-card-content">
+                    <div class="community-card-name">ティナ</div>
+                    <div class="community-card-meta">狭山市 ・ 猫 ・ 6歳</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Story -->
+<section class="pillars">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-eyebrow">FAMILY STORY</span>
+            <h2 class="section-title">読者の物語</h2>
+        </div>
+
+        <div class="story-feature">
+            <div class="story-feature-image">
+                <img src="https://images.unsplash.com/photo-1534361960057-19889db9621e?w=800&auto=format&fit=crop" alt="ある家族の物語">
+            </div>
+            <div>
+                <div style="font-family: var(--font-accent); font-size: 0.85rem; letter-spacing: 0.2em; color: var(--color-gold); margin-bottom: 16px;">VOL.02 掲載</div>
+                <h3>保護犬のコロと、<br>川口で過ごす毎日。</h3>
+                <p style="line-height: 2; color: var(--color-text-sub);">
+                    「3年前、川口の譲渡会で出会ったコロ。最初は怖がって近づいてくれなかったのに、
+                    今ではソファで一緒に昼寝する親友です。散歩道で出会う近所のワンちゃんたちとも仲良しで、
+                    毎日小さな発見があります。」
+                </p>
+                <div class="story-quote">
+                    「ペットと暮らすって、小さな奇跡の連続なんだって、気付かされています。」
+                </div>
+                <p style="font-size: 0.9rem; color: var(--color-text-sub);">
+                    ― 佐藤さん一家（川口市）／コロ（ミックス・推定6歳）
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Submit Form -->
+<section>
+    <div class="container">
+        <div class="section-header">
+            <span class="section-eyebrow">SUBMIT</span>
+            <h2 class="section-title">あなたのステキも、見せてください。</h2>
+            <p class="section-lead">
+                うちの子のステキな瞬間を、ぜひ投稿してください。<br>
+                次号の誌面に掲載されるかもしれません。
+            </p>
+        </div>
+
+        <div class="submit-form">
+            <form>
+                <div class="form-group">
+                    <label class="form-label">飼い主さまのお名前 <span class="required">必須</span></label>
+                    <input type="text" class="form-input" placeholder="山田 花子">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">お住まいの市町村 <span class="required">必須</span></label>
+                    <input type="text" class="form-input" placeholder="川越市">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">ペットのお名前 <span class="required">必須</span></label>
+                    <input type="text" class="form-input" placeholder="モカ">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">ペットの種類・年齢</label>
+                    <input type="text" class="form-input" placeholder="柴犬・4歳">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">うちの子自慢メッセージ</label>
+                    <textarea class="form-textarea" placeholder="うちの子のステキなところ、かわいいエピソードをどうぞ"></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">お写真 <span class="required">必須</span></label>
+                    <input type="file" class="form-input" accept="image/*">
+                </div>
+                <div style="display: flex; gap: 12px; align-items: center; margin: 24px 0;">
+                    <input type="checkbox" id="terms">
+                    <label for="terms" style="font-size: 0.9rem; color: var(--color-text-sub);">誌面・Webサイトへの掲載に同意します</label>
+                </div>
+                <div style="text-align: center; margin-top: 32px;">
+                    <button type="button" class="btn btn-primary">投稿する <span class="btn-arrow">→</span></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <a href="index.html" class="site-logo">
+                    <span class="site-logo-mark">Lazo</span>
+                    <span class="site-logo-sub">SAITAMA</span>
+                </a>
+                <p class="footer-tagline">ペットと、ステキに暮らす。<br>埼玉の、新しい毎日。</p>
+            </div>
+            <div class="footer-nav">
+                <h4>ABOUT</h4>
+                <ul><li><a href="about.html">Lazoとは</a></li><li><a href="latest.html">最新号</a></li></ul>
+            </div>
+            <div class="footer-nav">
+                <h4>CONTENT</h4>
+                <ul><li><a href="area.html">うちの町のLazo</a></li><li><a href="community.html">うちの子自慢</a></li><li><a href="shops.html">設置店を探す</a></li></ul>
+            </div>
+            <div class="footer-nav">
+                <h4>CONTACT</h4>
+                <ul><li><a href="ad.html">広告掲載</a></li><li><a href="contact.html">お問い合わせ</a></li></ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>© <span data-current-year>2026</span> 株式会社スペーススタッフ / Lazo 埼玉版</div>
+        </div>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

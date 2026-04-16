@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>うちの子のお困りごと ｜ Lazo 埼玉版</title>
+<meta name="description" content="ペットの健康・しつけ・食事・お出かけ・防災のお困りごと解決情報。埼玉の獣医師・専門家が答えます。">
+<meta name="keywords" content="ペット,お困りごと,相談,獣医師,Q&A,埼玉,犬,猫">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700;900&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+    /* Category grid */
+    .category-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 20px;
+        margin-top: 48px;
+    }
+    .category-card {
+        background: var(--color-white);
+        border-radius: 24px;
+        padding: 32px 20px;
+        text-align: center;
+        transition: all 0.3s;
+        cursor: pointer;
+        border: 3px solid var(--color-cream-deep);
+        text-decoration: none;
+        color: inherit;
+    }
+    .category-card:hover {
+        transform: translateY(-6px) rotate(-1deg);
+        border-color: var(--color-coral-light);
+        box-shadow: 0 16px 32px rgba(255, 138, 122, 0.18);
+        opacity: 1;
+    }
+    .category-emoji {
+        font-size: 3.5rem;
+        line-height: 1;
+        margin-bottom: 16px;
+        display: block;
+    }
+    .category-name {
+        font-family: var(--font-serif);
+        font-weight: 700;
+        color: var(--color-primary);
+        font-size: 1.05rem;
+        margin-bottom: 6px;
+    }
+    .category-count {
+        font-size: 0.75rem;
+        color: var(--color-text-sub);
+        letter-spacing: 0.1em;
+    }
+
+    /* Featured Q&A */
+    .qa-featured {
+        background: linear-gradient(135deg, var(--color-yellow) 0%, var(--color-coral-light) 100%);
+        border-radius: 40px;
+        padding: 60px;
+        margin-top: 64px;
+        position: relative;
+        overflow: hidden;
+    }
+    .qa-featured::before {
+        content: '❓';
+        position: absolute;
+        top: -20px;
+        right: 40px;
+        font-size: 8rem;
+        opacity: 0.2;
+    }
+
+    /* Q&A List */
+    .qa-list {
+        max-width: 920px;
+        margin: 64px auto 0;
+        display: grid;
+        gap: 20px;
+    }
+    .qa-card {
+        background: var(--color-white);
+        border-radius: 24px;
+        padding: 32px 40px;
+        border: 2px solid var(--color-cream-deep);
+        transition: all 0.3s;
+        display: grid;
+        grid-template-columns: 80px 1fr auto;
+        gap: 24px;
+        align-items: start;
+    }
+    .qa-card:hover {
+        border-color: var(--color-coral-light);
+        transform: translateY(-3px);
+        box-shadow: 0 12px 24px rgba(46, 90, 135, 0.08);
+    }
+    .qa-icon {
+        width: 72px;
+        height: 72px;
+        background: var(--color-cream);
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+    }
+    .qa-label {
+        display: inline-block;
+        padding: 4px 14px;
+        background: var(--color-coral);
+        color: var(--color-white);
+        font-size: 0.7rem;
+        border-radius: 20px;
+        letter-spacing: 0.1em;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+    .qa-label.health { background: var(--color-coral); }
+    .qa-label.training { background: var(--color-mint); }
+    .qa-label.food { background: var(--color-gold); }
+    .qa-label.outing { background: var(--color-sky); }
+    .qa-label.disaster { background: var(--color-arakawa); }
+    .qa-label.room { background: var(--color-chichibu); }
+    .qa-label.senior { background: #B78BD5; }
+    .qa-question {
+        font-family: var(--font-serif);
+        font-weight: 700;
+        font-size: 1.15rem;
+        color: var(--color-primary);
+        line-height: 1.6;
+        margin-bottom: 12px;
+    }
+    .qa-answer {
+        font-size: 0.95rem;
+        color: var(--color-text-sub);
+        line-height: 1.9;
+        margin-bottom: 16px;
+    }
+    .qa-expert {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 0.85rem;
+        color: var(--color-text);
+    }
+    .qa-expert-avatar {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: var(--color-cream);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .qa-arrow {
+        font-size: 1.5rem;
+        color: var(--color-coral);
+        font-weight: 700;
+        align-self: center;
+    }
+
+    /* Search box */
+    .search-qa {
+        max-width: 720px;
+        margin: 48px auto 0;
+        position: relative;
+    }
+    .search-qa input {
+        width: 100%;
+        padding: 24px 32px 24px 70px;
+        background: var(--color-white);
+        border: 3px solid var(--color-cream-deep);
+        border-radius: 40px;
+        font-size: 1.1rem;
+        font-family: inherit;
+        color: var(--color-text);
+        transition: all 0.3s;
+    }
+    .search-qa input:focus {
+        outline: none;
+        border-color: var(--color-coral);
+        box-shadow: 0 8px 24px rgba(255, 138, 122, 0.2);
+    }
+    .search-qa::before {
+        content: '🔍';
+        position: absolute;
+        left: 28px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.5rem;
+    }
+
+    /* Ask experts */
+    .ask-box {
+        background: var(--color-primary);
+        color: var(--color-white);
+        padding: 60px;
+        border-radius: 40px;
+        margin-top: 80px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+    .ask-box::before {
+        content: '🐾';
+        position: absolute;
+        top: -40px;
+        left: -40px;
+        font-size: 12rem;
+        opacity: 0.08;
+    }
+    .ask-box::after {
+        content: '🐾';
+        position: absolute;
+        bottom: -50px;
+        right: -30px;
+        font-size: 14rem;
+        opacity: 0.08;
+        transform: rotate(30deg);
+    }
+    .ask-box h3 {
+        color: var(--color-white);
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        position: relative;
+    }
+    .ask-box p {
+        color: rgba(255,255,255,0.9);
+        max-width: 640px;
+        margin: 0 auto 32px;
+        line-height: 1.9;
+        position: relative;
+    }
+
+    @media (max-width: 768px) {
+        .qa-card { grid-template-columns: 1fr; }
+        .qa-icon { width: 56px; height: 56px; font-size: 1.6rem; }
+        .qa-featured, .ask-box { padding: 32px; }
+    }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="header-inner">
+        <a href="index.html" class="site-logo">
+            <span class="site-logo-mark">Lazo</span>
+            <span class="site-logo-sub">SAITAMA</span>
+        </a>
+        <nav class="site-nav">
+            <ul>
+                <li><a href="about.html">Lazoとは</a></li>
+                <li><a href="latest.html">最新号</a></li>
+                <li><a href="kotogoto.html">お困りごと</a></li>
+                <li><a href="area.html">うちの町</a></li>
+                <li><a href="shops.html">設置店</a></li>
+                <li><a href="ad.html">広告掲載</a></li>
+            </ul>
+            <a href="contact.html" class="header-cta">お問い合わせ</a>
+        </nav>
+        <button class="menu-toggle" aria-label="メニュー"><span></span><span></span><span></span></button>
+    </div>
+</header>
+
+<section class="page-hero">
+    <div class="container">
+        <div class="page-hero-eyebrow">PET Q&A</div>
+        <h1 class="page-hero-title">うちの子の<br>お困りごと、解決します。</h1>
+        <p class="page-hero-lead">
+            健康・しつけ・食事・おでかけ・防災…<br>
+            ペットと暮らす毎日の「どうしよう」に、獣医師や専門家が答えます。
+        </p>
+    </div>
+</section>
+
+<nav class="breadcrumb">
+    <ol>
+        <li><a href="index.html">ホーム</a></li>
+        <li>お困りごと解決</li>
+    </ol>
+</nav>
+
+<!-- Search -->
+<section style="padding-top: 60px; padding-bottom: 40px;">
+    <div class="container">
+        <div class="search-qa">
+            <input type="text" placeholder="気になる症状・悩み・キーワードで検索...">
+        </div>
+    </div>
+</section>
+
+<!-- Categories -->
+<section style="padding-top: 40px;">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-eyebrow">CATEGORIES</span>
+            <h2 class="section-title">カテゴリから探す</h2>
+            <p class="section-lead">
+                気になるテーマを選ぶと、そのジャンルのお困りごとと解決策が表示されます。
+            </p>
+        </div>
+
+        <div class="category-grid">
+            <a href="#health" class="category-card">
+                <span class="category-emoji">🏥</span>
+                <div class="category-name">健康・病気</div>
+                <div class="category-count">32件のQ&A</div>
+            </a>
+            <a href="#training" class="category-card">
+                <span class="category-emoji">🐕</span>
+                <div class="category-name">しつけ・行動</div>
+                <div class="category-count">28件のQ&A</div>
+            </a>
+            <a href="#food" class="category-card">
+                <span class="category-emoji">🍽</span>
+                <div class="category-name">ごはん・食事</div>
+                <div class="category-count">24件のQ&A</div>
+            </a>
+            <a href="#outing" class="category-card">
+                <span class="category-emoji">🚗</span>
+                <div class="category-name">おでかけ</div>
+                <div class="category-count">18件のQ&A</div>
+            </a>
+            <a href="#disaster" class="category-card">
+                <span class="category-emoji">⛑</span>
+                <div class="category-name">防災・緊急時</div>
+                <div class="category-count">16件のQ&A</div>
+            </a>
+            <a href="#room" class="category-card">
+                <span class="category-emoji">🏠</span>
+                <div class="category-name">お部屋づくり</div>
+                <div class="category-count">14件のQ&A</div>
+            </a>
+            <a href="#senior" class="category-card">
+                <span class="category-emoji">👴</span>
+                <div class="category-name">シニア期ケア</div>
+                <div class="category-count">22件のQ&A</div>
+            </a>
+            <a href="#grief" class="category-card">
+                <span class="category-emoji">🌸</span>
+                <div class="category-name">グリーフケア</div>
+                <div class="category-count">8件のQ&A</div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Q -->
+<section>
+    <div class="container">
+        <div class="qa-featured">
+            <span class="qa-label" style="background: var(--color-primary); color: var(--color-yellow);">今月のPICK UP</span>
+            <h3 style="font-family: var(--font-serif); font-size: 1.8rem; color: var(--color-primary); margin: 16px 0; line-height: 1.5; font-weight: 900; position: relative;">
+                「最近おしっこの回数が多い気がする…<br>
+                様子を見て大丈夫？病院に行くべき？」
+            </h3>
+            <p style="line-height: 1.9; color: var(--color-text); margin-bottom: 24px; position: relative;">
+                冬は泌尿器トラブルが増える季節。愛犬・愛猫の「いつもと違う」サインは、
+                早めに気付いてあげたいもの。埼玉県獣医師会の先生が、家庭でできるチェックポイントと、
+                「こうなったら病院へ」のタイミングをやさしく解説します。
+            </p>
+            <a href="#" class="btn btn-primary" style="position: relative;">続きを読む <span class="btn-arrow">→</span></a>
+        </div>
+    </div>
+</section>
+
+<!-- Health Q&A -->
+<section id="health">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-eyebrow">HEALTH</span>
+            <h2 class="section-title">🏥 健康・病気のお困りごと</h2>
+        </div>
+
+        <div class="qa-list">
+            <div class="qa-card">
+                <div class="qa-icon">🐕</div>
+                <div>
+                    <span class="qa-label health">Q. 健康</span>
+                    <div class="qa-question">耳を頻繁にかくのですが、外耳炎でしょうか？</div>
+                    <p class="qa-answer">
+                        耳をかく頻度が増えた、頭を振る、耳から臭いがする…これらは外耳炎の可能性があります。
+                        軽度なら自宅ケアでも改善することがありますが、悪化させないために早めの受診がおすすめです。
+                    </p>
+                    <div class="qa-expert">
+                        <div class="qa-expert-avatar">👨‍⚕️</div>
+                        <div>回答：<strong>川口動物病院</strong> 獣医師 田村先生</div>
+                    </div>
+                </div>
+                <div class="qa-arrow">→</div>
+            </div>
+
+            <div class="qa-card">
+                <div class="qa-icon">🐱</div>
+                <div>
+                    <span class="qa-label health">Q. 健康</span>
+                    <div class="qa-question">猫が毛玉を吐いてしまいます。対策は？</div>
+                    <p class="qa-answer">
+                        猫の毛玉問題は、ブラッシングの頻度を上げる、毛玉ケアフードを取り入れる、
+                        適切な運動で消化を促すなど、家庭でできる工夫でかなり改善します。
+                    </p>
+                    <div class="qa-expert">
+                        <div class="qa-expert-avatar">👩‍⚕️</div>
+                        <div>回答：<strong>さいたま猫専門病院</strong> 獣医師 佐藤先生</div>
+                    </div>
+                </div>
+                <div class="qa-arrow">→</div>
+            </div>
+
+            <div class="qa-card">
+                <div class="qa-icon">💧</div>
+                <div>
+                    <span class="qa-label health">Q. 健康</span>
+                    <div class="qa-question">急に水をたくさん飲むようになって心配です</div>
+                    <p class="qa-answer">
+                        多飲多尿は糖尿病や腎臓の病気、クッシング症候群などのサインかもしれません。
+                        特にシニア期のワンちゃん・猫ちゃんは要注意。できるだけ早く動物病院の受診をおすすめします。
+                    </p>
+                    <div class="qa-expert">
+                        <div class="qa-expert-avatar">👨‍⚕️</div>
+                        <div>回答：<strong>大宮さくら動物医療センター</strong> 院長 山本先生</div>
+                    </div>
+                </div>
+                <div class="qa-arrow">→</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Training Q&A -->
+<section id="training" class="pillars">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-eyebrow">TRAINING</span>
+            <h2 class="section-title">🐕 しつけ・行動のお困りごと</h2>
+        </div>
+
+        <div class="qa-list">
+            <div class="qa-card">
+                <div class="qa-icon">🙉</div>
+                <div>
+                    <span class="qa-label training">Q. しつけ</span>
+                    <div class="qa-question">子犬の無駄吠えが止まりません。どう接すればいい？</div>
+                    <p class="qa-answer">
+                        子犬の吠えは、多くの場合「注目してほしい」「不安」「興奮」のサインです。
+                        吠えた時に反応するとかえって悪化することも。具体的な対処法を、ドッグトレーナーがお伝えします。
+                    </p>
+                    <div class="qa-expert">
+                        <div class="qa-expert-avatar">👩‍🏫</div>
+                        <div>回答：<strong>ドッグスクール越谷</strong> トレーナー 木村さん</div>
+                    </div>
+                </div>
+                <div class="qa-arrow">→</div>
+            </div>
+
+            <div class="qa-card">
+                <div class="qa-icon">🙀</div>
+                <div>
+                    <span class="qa-label training">Q. しつけ</span>
+                    <div class="qa-question">新しい家族（猫）が先住猫と仲良くできません</div>
+                    <p class="qa-answer">
+                        猫同士の関係作りには段階があります。いきなり対面させるのではなく、
+                        匂い→視線→短時間の接触と、少しずつ距離を縮めていきましょう。
+                    </p>
+                    <div class="qa-expert">
+                        <div class="qa-expert-avatar">👩‍⚕️</div>
+                        <div>回答：<strong>猫の行動診療士</strong> 中村先生</div>
+                    </div>
+                </div>
+                <div class="qa-arrow">→</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Food Q&A -->
+<section id="food">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-eyebrow">FOOD</span>
+            <h2 class="section-title">🍽 ごはん・食事のお困りごと</h2>
+        </div>
+
+        <div class="qa-list">
+            <div class="qa-card">
+                <div class="qa-icon">🍖</div>
+                <div>
+                    <span class="qa-label food">Q. 食事</span>
+                    <div class="qa-question">最近食欲がないのですが、フードを変えるべき？</div>
+                    <p class="qa-answer">
+                        急な食欲不振は健康上の問題の可能性も。まずは獣医師に相談を。
+                        問題がなければ、フードの嗜好性UPの工夫や、ウェットフードへの切り替えなども選択肢です。
+                    </p>
+                    <div class="qa-expert">
+                        <div class="qa-expert-avatar">👩‍🍳</div>
+                        <div>回答：<strong>ペット栄養管理士</strong> 鈴木さん</div>
+                    </div>
+                </div>
+                <div class="qa-arrow">→</div>
+            </div>
+
+            <div class="qa-card">
+                <div class="qa-icon">🍠</div>
+                <div>
+                    <span class="qa-label food">Q. 食事</span>
+                    <div class="qa-question">手作りごはんを始めたい。何から始めればいい？</div>
+                    <p class="qa-answer">
+                        いきなり100%手作りに切り替えるのはNG。まずはトッピングから始めて、
+                        愛犬・愛猫の体調を見ながら徐々に。ペットに与えてはいけない食材リストも必ず確認を。
+                    </p>
+                    <div class="qa-expert">
+                        <div class="qa-expert-avatar">👩‍🍳</div>
+                        <div>回答：<strong>ペット栄養管理士</strong> 鈴木さん</div>
+                    </div>
+                </div>
+                <div class="qa-arrow">→</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Disaster Q&A -->
+<section id="disaster" class="pillars">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-eyebrow">EMERGENCY</span>
+            <h2 class="section-title">⛑ 防災・緊急時のお困りごと</h2>
+        </div>
+
+        <div class="qa-list">
+            <div class="qa-card">
+                <div class="qa-icon">🌊</div>
+                <div>
+                    <span class="qa-label disaster">Q. 防災</span>
+                    <div class="qa-question">荒川の氾濫時、ペットとどう避難すればいい？</div>
+                    <p class="qa-answer">
+                        埼玉では水害リスクが現実的な課題です。お住まいのハザードマップ確認、
+                        ペット同行避難可能な避難所の事前把握、キャリー・備蓄品の準備が必須。
+                        Lazo防災プラン自動生成で、ご家族だけのプランをお作りいただけます。
+                    </p>
+                    <div class="qa-expert">
+                        <div class="qa-expert-avatar">🚒</div>
+                        <div>回答：<strong>ペット防災アドバイザー</strong> 監修</div>
+                    </div>
+                </div>
+                <div class="qa-arrow">→</div>
+            </div>
+
+            <div class="qa-card">
+                <div class="qa-icon">🌡</div>
+                <div>
+                    <span class="qa-label disaster">Q. 緊急</span>
+                    <div class="qa-question">真夏の留守番中、熱中症が心配です</div>
+                    <p class="qa-answer">
+                        埼玉は熊谷を中心に全国有数の暑さ。エアコン設定・水分補給・冷却グッズの活用が命を守ります。
+                        停電対策として、モバイルバッテリーやポータブル電源も検討を。
+                    </p>
+                    <div class="qa-expert">
+                        <div class="qa-expert-avatar">👨‍⚕️</div>
+                        <div>回答：<strong>熊谷動物病院</strong> 獣医師 井上先生</div>
+                    </div>
+                </div>
+                <div class="qa-arrow">→</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Senior Q&A -->
+<section id="senior">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-eyebrow">SENIOR CARE</span>
+            <h2 class="section-title">👴 シニア期ケアのお困りごと</h2>
+        </div>
+
+        <div class="qa-list">
+            <div class="qa-card">
+                <div class="qa-icon">🦮</div>
+                <div>
+                    <span class="qa-label senior">Q. シニア</span>
+                    <div class="qa-question">13歳の愛犬が階段を上れなくなってきました</div>
+                    <p class="qa-answer">
+                        シニア期の関節ケアは日常の工夫が鍵。滑りにくいマット、段差スロープ、
+                        適度な筋力維持の運動、関節サプリの活用など。獣医師と相談しながら進めましょう。
+                    </p>
+                    <div class="qa-expert">
+                        <div class="qa-expert-avatar">👨‍⚕️</div>
+                        <div>回答：<strong>所沢シニアペットクリニック</strong> 院長</div>
+                    </div>
+                </div>
+                <div class="qa-arrow">→</div>
+            </div>
+
+            <div class="qa-card">
+                <div class="qa-icon">💊</div>
+                <div>
+                    <span class="qa-label senior">Q. シニア</span>
+                    <div class="qa-question">認知症かも？夜鳴きが増えました</div>
+                    <p class="qa-answer">
+                        シニア犬・猫の夜鳴きは、認知機能の低下（犬認知症）の可能性があります。
+                        早期発見で進行を緩やかにできることも。生活リズムの工夫と、獣医師への相談を。
+                    </p>
+                    <div class="qa-expert">
+                        <div class="qa-expert-avatar">👩‍⚕️</div>
+                        <div>回答：<strong>動物行動学専門</strong> 齋藤先生</div>
+                    </div>
+                </div>
+                <div class="qa-arrow">→</div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 48px;">
+            <a href="#" class="btn btn-outline">シニア期ケアの全記事を見る（全22件）</a>
+        </div>
+    </div>
+</section>
+
+<!-- Ask Form -->
+<section>
+    <div class="container">
+        <div class="ask-box">
+            <h3>あなたの「どうしよう」を<br>教えてください。</h3>
+            <p>
+                お困りごとが見つからなかったら、お気軽に質問してください。<br>
+                埼玉の獣医師・専門家が、できる限りお答えします。<br>
+                匿名での投稿もOKです。
+            </p>
+            <a href="contact.html?type=question" class="btn btn-primary" style="position: relative;">
+                質問を送る <span class="btn-arrow">→</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Related: find local help -->
+<section class="pillars">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-eyebrow">LOCAL EXPERTS</span>
+            <h2 class="section-title">あなたの町の<br>頼れる専門家を探す</h2>
+            <p class="section-lead">
+                お困りごとに合わせて、最寄りの動物病院・トレーナー・専門家を探せます。
+            </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 48px;">
+            <a href="shops.html" style="background: var(--color-white); padding: 32px; border-radius: 24px; border: 2px solid var(--color-cream-deep); text-decoration: none; color: inherit; transition: all 0.3s;">
+                <div style="font-size: 2.5rem; margin-bottom: 12px;">🏥</div>
+                <div style="font-family: var(--font-serif); font-weight: 700; color: var(--color-primary); font-size: 1.1rem; margin-bottom: 6px;">動物病院を探す</div>
+                <div style="font-size: 0.85rem; color: var(--color-text-sub);">市区町村・沿線別に検索</div>
+            </a>
+            <a href="shops.html" style="background: var(--color-white); padding: 32px; border-radius: 24px; border: 2px solid var(--color-cream-deep); text-decoration: none; color: inherit; transition: all 0.3s;">
+                <div style="font-size: 2.5rem; margin-bottom: 12px;">👩‍🏫</div>
+                <div style="font-family: var(--font-serif); font-weight: 700; color: var(--color-primary); font-size: 1.1rem; margin-bottom: 6px;">ドッグトレーナー</div>
+                <div style="font-size: 0.85rem; color: var(--color-text-sub);">しつけ・行動の相談先</div>
+            </a>
+            <a href="shops.html" style="background: var(--color-white); padding: 32px; border-radius: 24px; border: 2px solid var(--color-cream-deep); text-decoration: none; color: inherit; transition: all 0.3s;">
+                <div style="font-size: 2.5rem; margin-bottom: 12px;">✂️</div>
+                <div style="font-family: var(--font-serif); font-weight: 700; color: var(--color-primary); font-size: 1.1rem; margin-bottom: 6px;">トリミングサロン</div>
+                <div style="font-size: 0.85rem; color: var(--color-text-sub);">皮膚ケア・お手入れ</div>
+            </a>
+            <a href="disaster.html" style="background: var(--color-white); padding: 32px; border-radius: 24px; border: 2px solid var(--color-cream-deep); text-decoration: none; color: inherit; transition: all 0.3s;">
+                <div style="font-size: 2.5rem; margin-bottom: 12px;">⛑</div>
+                <div style="font-family: var(--font-serif); font-weight: 700; color: var(--color-primary); font-size: 1.1rem; margin-bottom: 6px;">防災プラン自動生成</div>
+                <div style="font-size: 0.85rem; color: var(--color-text-sub);">わが家専用の防災カード</div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <a href="index.html" class="site-logo">
+                    <span class="site-logo-mark">Lazo</span>
+                    <span class="site-logo-sub">SAITAMA</span>
+                </a>
+                <p class="footer-tagline">ペットと、ステキに暮らす。<br>埼玉の、新しい毎日。</p>
+            </div>
+            <div class="footer-nav">
+                <h4>ABOUT</h4>
+                <ul><li><a href="about.html">Lazoとは</a></li><li><a href="latest.html">最新号</a></li></ul>
+            </div>
+            <div class="footer-nav">
+                <h4>CONTENT</h4>
+                <ul>
+                    <li><a href="kotogoto.html">お困りごと解決</a></li>
+                    <li><a href="area.html">うちの町のLazo</a></li>
+                    <li><a href="community.html">うちの子自慢</a></li>
+                    <li><a href="shops.html">設置店を探す</a></li>
+                </ul>
+            </div>
+            <div class="footer-nav">
+                <h4>CONTACT</h4>
+                <ul>
+                    <li><a href="shop-register.html">店舗無料掲載</a></li>
+                    <li><a href="ad.html">広告掲載</a></li>
+                    <li><a href="contact.html">お問い合わせ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>© <span data-current-year>2026</span> 株式会社スペーススタッフ / Lazo 埼玉版</div>
+        </div>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>最新号・バックナンバー ｜ Lazo 埼玉版</title>
+<meta name="description" content="Lazo埼玉版の最新号特集とバックナンバー一覧。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700;900&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+    .issue-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 32px;
+        margin-top: 48px;
+    }
+    .issue-card {
+        background: var(--color-white);
+        border: 1px solid var(--color-border);
+        border-radius: 4px;
+        overflow: hidden;
+        transition: var(--transition-base);
+    }
+    .issue-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(27, 45, 74, 0.08); }
+    .issue-card-cover {
+        aspect-ratio: 3/4;
+        background: linear-gradient(135deg, var(--color-chichibu) 0%, var(--color-arakawa) 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 32px;
+        color: var(--color-cream);
+    }
+    .issue-card-cover.arakawa { background: linear-gradient(135deg, var(--color-arakawa) 0%, var(--color-primary) 100%); }
+    .issue-card-cover.gold { background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-chichibu) 100%); }
+    .issue-card-vol {
+        font-family: var(--font-accent);
+        font-size: 3rem;
+        line-height: 1;
+        font-style: italic;
+    }
+    .issue-card-title {
+        font-family: var(--font-serif);
+        font-size: 1.3rem;
+        line-height: 1.4;
+    }
+    .issue-card-info { padding: 24px; }
+    .issue-card-date {
+        font-size: 0.75rem;
+        color: var(--color-text-light);
+        letter-spacing: 0.2em;
+        margin-bottom: 8px;
+    }
+    .issue-card-name {
+        font-family: var(--font-serif);
+        font-size: 1.1rem;
+        color: var(--color-primary);
+        margin-bottom: 12px;
+    }
+    .issue-card-features {
+        font-size: 0.85rem;
+        color: var(--color-text-sub);
+        line-height: 1.8;
+    }
+    .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        margin-top: 48px;
+    }
+    .feature-article {
+        padding: 32px;
+        background: var(--color-cream);
+        border-radius: 4px;
+        border: 1px solid var(--color-border);
+    }
+    .feature-category {
+        display: inline-block;
+        padding: 4px 12px;
+        background: var(--color-gold);
+        color: var(--color-cream);
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+        margin-bottom: 16px;
+        border-radius: 2px;
+    }
+    .feature-article h3 {
+        font-size: 1.3rem;
+        color: var(--color-primary);
+        margin-bottom: 12px;
+        line-height: 1.5;
+    }
+    .feature-article p {
+        color: var(--color-text-sub);
+        font-size: 0.9rem;
+        line-height: 1.9;
+    }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="header-inner">
+        <a href="index.html" class="site-logo">
+            <span class="site-logo-mark">Lazo</span>
+            <span class="site-logo-sub">SAITAMA</span>
+        </a>
+        <nav class="site-nav">
+            <ul>
+                <li><a href="about.html">Lazoとは</a></li>
+                <li><a href="latest.html">最新号</a></li>
+                <li><a href="area.html">うちの町</a></li>
+                <li><a href="community.html">うちの子</a></li>
+                <li><a href="shops.html">設置店</a></li>
+                <li><a href="ad.html">広告掲載</a></li>
+            </ul>
+            <a href="contact.html" class="header-cta">お問い合わせ</a>
+        </nav>
+        <button class="menu-toggle" aria-label="メニュー"><span></span><span></span><span></span></button>
+    </div>
+</header>
+
+<section class="page-hero">
+    <div class="container">
+        <div class="page-hero-eyebrow">LATEST ISSUE</div>
+        <h1 class="page-hero-title">最新号・バックナンバー</h1>
+        <p class="page-hero-lead">季節ごとに、ペットとステキに暮らすヒントをお届けします。</p>
+    </div>
+</section>
+
+<nav class="breadcrumb">
+    <ol>
+        <li><a href="index.html">ホーム</a></li>
+        <li>最新号・バックナンバー</li>
+    </ol>
+</nav>
+
+<!-- Latest Issue Hero -->
+<section class="latest">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-eyebrow">VOL.02</span>
+            <h2 class="section-title">冬を、健やかに楽しむ暮らし。</h2>
+        </div>
+
+        <div class="latest-content">
+            <div class="latest-cover">
+                <div class="latest-cover-content">
+                    <div class="latest-cover-vol">Vol.02</div>
+                    <div>
+                        <div class="latest-cover-title">冬を、健やかに<br>楽しむ暮らし。</div>
+                    </div>
+                </div>
+            </div>
+            <div class="latest-details">
+                <div class="latest-issue-meta">
+                    <span>2026.02.12 RELEASE</span>
+                    <span>68 PAGES</span>
+                    <span>FREE</span>
+                </div>
+                <h3 class="latest-title">ぴったり寄り添う冬の日々を、<br>もっとステキに。</h3>
+                <p class="latest-description">
+                    寒い季節こそ、小さな家族との時間をじっくり味わえる。<br>
+                    冬の健康管理から、あったかお部屋づくり、<br>
+                    埼玉のぬくもりあふれるペット可カフェまで、たっぷり68ページ。
+                </p>
+                <ul class="latest-features">
+                    <li><span class="latest-feature-tag">特集</span><span>冬のペット可カフェ10選 ― 川越・大宮・浦和エリア</span></li>
+                    <li><span class="latest-feature-tag">健康</span><span>教えてドクター｜冬に多い泌尿器トラブル</span></li>
+                    <li><span class="latest-feature-tag">暮らし</span><span>あったかお部屋づくり ― 老犬・老猫にやさしい工夫</span></li>
+                    <li><span class="latest-feature-tag">投稿</span><span>うちの子のステキな瞬間｜読者フォト20選</span></li>
+                    <li><span class="latest-feature-tag">食</span><span>冬の手作りごはん｜管理栄養士のかんたんレシピ</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Articles -->
+<section class="pillars">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-eyebrow">FROM THIS ISSUE</span>
+            <h2 class="section-title">Vol.02 注目の記事</h2>
+        </div>
+
+        <div class="feature-grid">
+            <div class="feature-article">
+                <span class="feature-category">特集</span>
+                <h3>冬のペット可カフェ10選</h3>
+                <p>川越の古民家カフェから、大宮駅近の犬同伴OKビストロまで。実際に取材したおすすめの10軒をご紹介。店主さんのワンちゃんへのこだわりインタビューも必読です。</p>
+            </div>
+            <div class="feature-article">
+                <span class="feature-category">健康</span>
+                <h3>教えてドクター｜冬の泌尿器トラブル</h3>
+                <p>寒い季節に増える、愛犬・愛猫のおしっこトラブル。埼玉県獣医師会所属の獣医師が、家庭でできる予防と、病院に行くべきサインをやさしく解説します。</p>
+            </div>
+            <div class="feature-article">
+                <span class="feature-category">暮らし</span>
+                <h3>老犬・老猫にやさしいお部屋づくり</h3>
+                <p>段差をなくす、滑りにくい床にする、あったかい居場所をつくる。シニア期の家族が心地よく過ごせる、小さな工夫をインテリアコーディネーター監修でお届け。</p>
+            </div>
+            <div class="feature-article">
+                <span class="feature-category">食</span>
+                <h3>冬の手作りごはん｜かんたんレシピ</h3>
+                <p>体を温める食材を使った、愛犬・愛猫のための冬ごはん。5分でできて、栄養もバッチリ。管理栄養士監修の、はじめてさんにもやさしいレシピ集。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Backnumber List -->
+<section>
+    <div class="container">
+        <div class="section-header">
+            <span class="section-eyebrow">BACKNUMBER</span>
+            <h2 class="section-title">バックナンバー</h2>
+            <p class="section-lead">発行済み・発行予定の号一覧です。設置店で無料配布しています。</p>
+        </div>
+
+        <div class="issue-list">
+            <div class="issue-card">
+                <div class="issue-card-cover arakawa">
+                    <div class="issue-card-vol">Vol.03</div>
+                    <div class="issue-card-title">春のおでかけ<br>大特集</div>
+                </div>
+                <div class="issue-card-info">
+                    <div class="issue-card-date">2026.05.12 発行予定</div>
+                    <div class="issue-card-name">次号予告</div>
+                    <div class="issue-card-features">秩父・長瀞・川越のペット可スポット／春のノミ・マダニ対策／読者モデル募集</div>
+                </div>
+            </div>
+
+            <div class="issue-card">
+                <div class="issue-card-cover">
+                    <div class="issue-card-vol">Vol.02</div>
+                    <div class="issue-card-title">冬を、健やかに<br>楽しむ暮らし。</div>
+                </div>
+                <div class="issue-card-info">
+                    <div class="issue-card-date">2026.02.12 発行</div>
+                    <div class="issue-card-name">最新号</div>
+                    <div class="issue-card-features">冬のペット可カフェ10選／冬の泌尿器トラブル／あったかお部屋づくり</div>
+                </div>
+            </div>
+
+            <div class="issue-card">
+                <div class="issue-card-cover gold">
+                    <div class="issue-card-vol">Vol.01</div>
+                    <div class="issue-card-title">秋のおでかけ、<br>ペットと一緒に。</div>
+                </div>
+                <div class="issue-card-info">
+                    <div class="issue-card-date">2025.11.12 発行</div>
+                    <div class="issue-card-name">創刊号</div>
+                    <div class="issue-card-features">秋のおでかけ特集／冬支度のポイント／埼玉県獣医師会あいさつ／創刊記念コラム</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <a href="index.html" class="site-logo">
+                    <span class="site-logo-mark">Lazo</span>
+                    <span class="site-logo-sub">SAITAMA</span>
+                </a>
+                <p class="footer-tagline">ペットと、ステキに暮らす。<br>埼玉の、新しい毎日。</p>
+            </div>
+            <div class="footer-nav">
+                <h4>ABOUT</h4>
+                <ul>
+                    <li><a href="about.html">Lazoとは</a></li>
+                    <li><a href="latest.html">最新号</a></li>
+                </ul>
+            </div>
+            <div class="footer-nav">
+                <h4>CONTENT</h4>
+                <ul>
+                    <li><a href="area.html">うちの町のLazo</a></li>
+                    <li><a href="community.html">うちの子自慢</a></li>
+                    <li><a href="shops.html">設置店を探す</a></li>
+                </ul>
+            </div>
+            <div class="footer-nav">
+                <h4>CONTACT</h4>
+                <ul>
+                    <li><a href="ad.html">広告掲載</a></li>
+                    <li><a href="contact.html">お問い合わせ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>© <span data-current-year>2026</span> 株式会社スペーススタッフ / Lazo 埼玉版</div>
+        </div>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
